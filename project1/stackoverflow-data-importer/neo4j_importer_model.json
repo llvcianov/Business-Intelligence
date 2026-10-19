@@ -1,0 +1,1316 @@
+{
+  "version": "1.4.0",
+  "graph": {
+    "nodes": [
+      {
+        "id": "n0",
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "caption": "Question"
+      },
+      {
+        "id": "n1",
+        "position": {
+          "x": 0,
+          "y": 300
+        },
+        "caption": "Answer"
+      },
+      {
+        "id": "n2",
+        "position": {
+          "x": 300,
+          "y": 0
+        },
+        "caption": "Comment"
+      },
+      {
+        "id": "n3",
+        "position": {
+          "x": 300,
+          "y": 300
+        },
+        "caption": "User"
+      },
+      {
+        "id": "n4",
+        "position": {
+          "x": -207,
+          "y": 0
+        },
+        "caption": "Tag"
+      }
+    ],
+    "relationships": [
+      {
+        "id": "n0",
+        "type": "ANSWERED",
+        "fromId": "n1",
+        "toId": "n0"
+      },
+      {
+        "id": "n1",
+        "type": "TAGGED",
+        "fromId": "n0",
+        "toId": "n4"
+      },
+      {
+        "id": "n2",
+        "type": "ASKED",
+        "fromId": "n3",
+        "toId": "n0"
+      },
+      {
+        "id": "n3",
+        "type": "COMMENTED",
+        "fromId": "n3",
+        "toId": "n2"
+      },
+      {
+        "id": "n4",
+        "type": "COMMENTED_ON",
+        "fromId": "n2",
+        "toId": "n0"
+      },
+      {
+        "id": "n5",
+        "type": "PROVIDED",
+        "fromId": "n3",
+        "toId": "n1"
+      }
+    ]
+  },
+  "dataModel": {
+    "version": "1.4.0",
+    "graphSchemaRepresentation": {
+      "version": "1.0.0",
+      "graphSchema": {
+        "nodeLabels": [
+          {
+            "$id": "nl:n0",
+            "token": "Question",
+            "properties": [
+              {
+                "$id": "p:1",
+                "token": "question_id",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": false
+              },
+              {
+                "$id": "p:2",
+                "token": "link",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": false
+              },
+              {
+                "$id": "p:3",
+                "token": "accepted_answer_id",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": false
+              },
+              {
+                "$id": "p:4",
+                "token": "creation_date",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": false
+              },
+              {
+                "$id": "p:5",
+                "token": "view_count",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": false
+              },
+              {
+                "$id": "p:6",
+                "token": "answer_count",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": false
+              },
+              {
+                "$id": "p:7",
+                "token": "body_markdown",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": false
+              },
+              {
+                "$id": "p:8",
+                "token": "uuid",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": false
+              },
+              {
+                "$id": "p:9",
+                "token": "title",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": false
+              }
+            ]
+          },
+          {
+            "$id": "nl:n1",
+            "token": "Answer",
+            "properties": [
+              {
+                "$id": "p:10",
+                "token": "answer_id",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": false
+              },
+              {
+                "$id": "p:11",
+                "token": "link",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": false
+              },
+              {
+                "$id": "p:12",
+                "token": "title",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": false
+              },
+              {
+                "$id": "p:13",
+                "token": "is_accepted",
+                "type": {
+                  "type": "boolean"
+                },
+                "nullable": false
+              },
+              {
+                "$id": "p:14",
+                "token": "body_markdown",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": false
+              },
+              {
+                "$id": "p:15",
+                "token": "score",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": false
+              },
+              {
+                "$id": "p:16",
+                "token": "uuid",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": false
+              }
+            ]
+          },
+          {
+            "$id": "nl:n2",
+            "token": "Comment",
+            "properties": [
+              {
+                "$id": "p:17",
+                "token": "comment_id",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": false
+              },
+              {
+                "$id": "p:18",
+                "token": "score",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": false
+              },
+              {
+                "$id": "p:19",
+                "token": "uuid",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": false
+              },
+              {
+                "$id": "p:20",
+                "token": "link",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": false
+              }
+            ]
+          },
+          {
+            "$id": "nl:n3",
+            "token": "User",
+            "properties": [
+              {
+                "$id": "p:21",
+                "token": "user_id",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": false
+              },
+              {
+                "$id": "p:22",
+                "token": "uuid",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": false
+              },
+              {
+                "$id": "p:23",
+                "token": "display_name",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": false
+              }
+            ]
+          },
+          {
+            "$id": "nl:n4",
+            "token": "Tag",
+            "properties": [
+              {
+                "$id": "p:24",
+                "token": "tag_id",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": false
+              },
+              {
+                "$id": "p:25",
+                "token": "name",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": false
+              },
+              {
+                "$id": "p:26",
+                "token": "link",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": false
+              }
+            ]
+          }
+        ],
+        "nodeObjectTypes": [
+          {
+            "$id": "n:n0",
+            "labels": [
+              {
+                "$ref": "#nl:n0"
+              }
+            ]
+          },
+          {
+            "$id": "n:n1",
+            "labels": [
+              {
+                "$ref": "#nl:n1"
+              }
+            ]
+          },
+          {
+            "$id": "n:n2",
+            "labels": [
+              {
+                "$ref": "#nl:n2"
+              }
+            ]
+          },
+          {
+            "$id": "n:n3",
+            "labels": [
+              {
+                "$ref": "#nl:n3"
+              }
+            ]
+          },
+          {
+            "$id": "n:n4",
+            "labels": [
+              {
+                "$ref": "#nl:n4"
+              }
+            ]
+          }
+        ],
+        "relationshipTypes": [
+          {
+            "$id": "rt:n0",
+            "token": "ANSWERED",
+            "properties": []
+          },
+          {
+            "$id": "rt:n1",
+            "token": "TAGGED",
+            "properties": []
+          },
+          {
+            "$id": "rt:n2",
+            "token": "ASKED",
+            "properties": []
+          },
+          {
+            "$id": "rt:n3",
+            "token": "COMMENTED",
+            "properties": []
+          },
+          {
+            "$id": "rt:n4",
+            "token": "COMMENTED_ON",
+            "properties": []
+          },
+          {
+            "$id": "rt:n5",
+            "token": "PROVIDED",
+            "properties": []
+          }
+        ],
+        "relationshipObjectTypes": [
+          {
+            "$id": "r:n0",
+            "type": {
+              "$ref": "#rt:n0"
+            },
+            "from": {
+              "$ref": "#n:n1"
+            },
+            "to": {
+              "$ref": "#n:n0"
+            }
+          },
+          {
+            "$id": "r:n1",
+            "type": {
+              "$ref": "#rt:n1"
+            },
+            "from": {
+              "$ref": "#n:n0"
+            },
+            "to": {
+              "$ref": "#n:n4"
+            }
+          },
+          {
+            "$id": "r:n2",
+            "type": {
+              "$ref": "#rt:n2"
+            },
+            "from": {
+              "$ref": "#n:n3"
+            },
+            "to": {
+              "$ref": "#n:n0"
+            }
+          },
+          {
+            "$id": "r:n3",
+            "type": {
+              "$ref": "#rt:n3"
+            },
+            "from": {
+              "$ref": "#n:n3"
+            },
+            "to": {
+              "$ref": "#n:n2"
+            }
+          },
+          {
+            "$id": "r:n4",
+            "type": {
+              "$ref": "#rt:n4"
+            },
+            "from": {
+              "$ref": "#n:n2"
+            },
+            "to": {
+              "$ref": "#n:n0"
+            }
+          },
+          {
+            "$id": "r:n5",
+            "type": {
+              "$ref": "#rt:n5"
+            },
+            "from": {
+              "$ref": "#n:n3"
+            },
+            "to": {
+              "$ref": "#n:n1"
+            }
+          }
+        ],
+        "indexes": [
+          {
+            "$id": "i:0",
+            "name": "question_id_Question_uniq",
+            "indexType": "default",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:n0"
+            },
+            "properties": [
+              {
+                "$ref": "#p:1"
+              }
+            ]
+          },
+          {
+            "$id": "i:1",
+            "name": "answer_id_Answer_uniq",
+            "indexType": "default",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:n1"
+            },
+            "properties": [
+              {
+                "$ref": "#p:10"
+              }
+            ]
+          },
+          {
+            "$id": "i:2",
+            "name": "comment_id_Comment_uniq",
+            "indexType": "default",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:n2"
+            },
+            "properties": [
+              {
+                "$ref": "#p:17"
+              }
+            ]
+          },
+          {
+            "$id": "i:3",
+            "name": "user_id_User_uniq",
+            "indexType": "default",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:n3"
+            },
+            "properties": [
+              {
+                "$ref": "#p:21"
+              }
+            ]
+          },
+          {
+            "$id": "i:4",
+            "name": "tag_id_Tag_uniq",
+            "indexType": "default",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:n4"
+            },
+            "properties": [
+              {
+                "$ref": "#p:24"
+              }
+            ]
+          },
+          {
+            "$id": "i:5",
+            "name": "uuid_Answer",
+            "indexType": "default",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:n1"
+            },
+            "properties": [
+              {
+                "$ref": "#p:16"
+              }
+            ]
+          },
+          {
+            "$id": "i:6",
+            "name": "uuid_Comment",
+            "indexType": "default",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:n2"
+            },
+            "properties": [
+              {
+                "$ref": "#p:19"
+              }
+            ]
+          },
+          {
+            "$id": "i:7",
+            "name": "uuid_Question",
+            "indexType": "default",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:n0"
+            },
+            "properties": [
+              {
+                "$ref": "#p:8"
+              }
+            ]
+          },
+          {
+            "$id": "i:8",
+            "name": "name_Tag",
+            "indexType": "default",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:n4"
+            },
+            "properties": [
+              {
+                "$ref": "#p:25"
+              }
+            ]
+          },
+          {
+            "$id": "i:9",
+            "name": "uuid_User",
+            "indexType": "default",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:n3"
+            },
+            "properties": [
+              {
+                "$ref": "#p:22"
+              }
+            ]
+          }
+        ],
+        "constraints": [
+          {
+            "$id": "c:0",
+            "name": "question_id_Question_uniq",
+            "constraintType": "uniqueness",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:n0"
+            },
+            "properties": [
+              {
+                "$ref": "#p:1"
+              }
+            ]
+          },
+          {
+            "$id": "c:1",
+            "name": "answer_id_Answer_uniq",
+            "constraintType": "uniqueness",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:n1"
+            },
+            "properties": [
+              {
+                "$ref": "#p:10"
+              }
+            ]
+          },
+          {
+            "$id": "c:2",
+            "name": "comment_id_Comment_uniq",
+            "constraintType": "uniqueness",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:n2"
+            },
+            "properties": [
+              {
+                "$ref": "#p:17"
+              }
+            ]
+          },
+          {
+            "$id": "c:3",
+            "name": "user_id_User_uniq",
+            "constraintType": "uniqueness",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:n3"
+            },
+            "properties": [
+              {
+                "$ref": "#p:21"
+              }
+            ]
+          },
+          {
+            "$id": "c:4",
+            "name": "tag_id_Tag_uniq",
+            "constraintType": "uniqueness",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:n4"
+            },
+            "properties": [
+              {
+                "$ref": "#p:24"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "graphSchemaExtensionsRepresentation": {
+      "nodeKeyProperties": [
+        {
+          "node": {
+            "$ref": "#n:n0"
+          },
+          "keyProperty": {
+            "$ref": "#p:1"
+          }
+        },
+        {
+          "node": {
+            "$ref": "#n:n1"
+          },
+          "keyProperty": {
+            "$ref": "#p:10"
+          }
+        },
+        {
+          "node": {
+            "$ref": "#n:n2"
+          },
+          "keyProperty": {
+            "$ref": "#p:17"
+          }
+        },
+        {
+          "node": {
+            "$ref": "#n:n3"
+          },
+          "keyProperty": {
+            "$ref": "#p:21"
+          }
+        },
+        {
+          "node": {
+            "$ref": "#n:n4"
+          },
+          "keyProperty": {
+            "$ref": "#p:24"
+          }
+        }
+      ]
+    },
+    "graphMappingRepresentation": {
+      "dataSourceSchema": {
+        "type": "local/csv",
+        "tableSchemas": [
+          {
+            "$id": "t:1",
+            "name": "stackoverflow.relationships.TAGGED.csv",
+            "expanded": false,
+            "fields": [
+              {
+                "name": "question_id",
+                "type": "integer",
+                "sample": "4886"
+              },
+              {
+                "name": "tag_id",
+                "type": "integer",
+                "sample": "1679"
+              }
+            ]
+          },
+          {
+            "$id": "t:2",
+            "name": "stackoverflow.relationships.PROVIDED.csv",
+            "expanded": false,
+            "fields": [
+              {
+                "name": "user_id",
+                "type": "integer",
+                "sample": "2440"
+              },
+              {
+                "name": "answer_id",
+                "type": "integer",
+                "sample": "2155"
+              }
+            ]
+          },
+          {
+            "$id": "t:3",
+            "name": "stackoverflow.relationships.COMMENTED_ON.csv",
+            "expanded": false,
+            "fields": [
+              {
+                "name": "comment_id",
+                "type": "integer",
+                "sample": "5943"
+              },
+              {
+                "name": "question_id",
+                "type": "integer",
+                "sample": "4637"
+              }
+            ]
+          },
+          {
+            "$id": "t:4",
+            "name": "stackoverflow.relationships.COMMENTED.csv",
+            "expanded": false,
+            "fields": [
+              {
+                "name": "user_id",
+                "type": "integer",
+                "sample": "2452"
+              },
+              {
+                "name": "comment_id",
+                "type": "integer",
+                "sample": "5943"
+              }
+            ]
+          },
+          {
+            "$id": "t:5",
+            "name": "stackoverflow.relationships.ASKED.csv",
+            "expanded": false,
+            "fields": [
+              {
+                "name": "user_id",
+                "type": "integer",
+                "sample": "604"
+              },
+              {
+                "name": "question_id",
+                "type": "integer",
+                "sample": "4622"
+              }
+            ]
+          },
+          {
+            "$id": "t:6",
+            "name": "stackoverflow.relationships.ANSWERED.csv",
+            "expanded": false,
+            "fields": [
+              {
+                "name": "answer_id",
+                "type": "integer",
+                "sample": "2155"
+              },
+              {
+                "name": "question_id",
+                "type": "integer",
+                "sample": "4623"
+              }
+            ]
+          },
+          {
+            "$id": "t:7",
+            "name": "stackoverflow.nodes.Tag.csv",
+            "expanded": false,
+            "fields": [
+              {
+                "name": "tag_id",
+                "type": "integer",
+                "sample": "1679"
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "sample": "neo4j"
+              },
+              {
+                "name": "link",
+                "type": "string",
+                "sample": "https://stackoverflow.com/questions/tagged/neo4j"
+              }
+            ]
+          },
+          {
+            "$id": "t:8",
+            "name": "stackoverflow.nodes.User.csv",
+            "expanded": false,
+            "fields": [
+              {
+                "name": "user_id",
+                "type": "integer",
+                "sample": "604"
+              },
+              {
+                "name": "uuid",
+                "type": "integer",
+                "sample": "2236092"
+              },
+              {
+                "name": "display_name",
+                "type": "string",
+                "sample": "schernichkin"
+              }
+            ]
+          },
+          {
+            "$id": "t:9",
+            "name": "stackoverflow.nodes.Comment.csv",
+            "expanded": false,
+            "fields": [
+              {
+                "name": "comment_id",
+                "type": "integer",
+                "sample": "5943"
+              },
+              {
+                "name": "score",
+                "type": "integer",
+                "sample": "0"
+              },
+              {
+                "name": "uuid",
+                "type": "integer",
+                "sample": "122336972"
+              },
+              {
+                "name": "link",
+                "type": "string",
+                "sample": "https://stackoverflow.com/questions/69208813/configuring-and-connect-to-neo4j#comment122336972_69208813"
+              }
+            ]
+          },
+          {
+            "$id": "t:10",
+            "name": "stackoverflow.nodes.Answer.csv",
+            "expanded": false,
+            "fields": [
+              {
+                "name": "answer_id",
+                "type": "integer",
+                "sample": "2155"
+              },
+              {
+                "name": "link",
+                "type": "string",
+                "sample": "https://stackoverflow.com/a/69272967"
+              },
+              {
+                "name": "title",
+                "type": "string",
+                "sample": "Return &#39;biggest fan of a tag&#39; neo4j"
+              },
+              {
+                "name": "is_accepted",
+                "type": "boolean",
+                "sample": "true"
+              },
+              {
+                "name": "body_markdown",
+                "type": "string",
+                "sample": "The error is here:\r\n\r\n```\r\nWHERE COUNT(posted) &lt; 10\r\n```\r\n\r\nYou need to use these aggregations in a WITH clause as you did with your earlier count in the query.\r\n\r\nChange the query to this and it should work:\r\n\r\n```\r\nMATCH (b:Blog)-[r:liked]-(p:Post)-[:tagged]-(t:Tag)\r\nWHERE t.content = &quot;dog&quot;\r\nWITH b, COUNT(r) as interaction_count\r\n\r\nMATCH (b:Blog)-[posted:posted_by]-(:Post)-[:tagged]-(t:Tag)\r\n\r\nWITH b,interaction_count, COUNT(posted) as p\r\nWHERE p&lt;10 \r\n\r\nRETURN b, interaction_count\r\nORDER BY interaction_count DESC\r\nLIMIT 10\r\n```\r\n\r\nThe only difference is that I broke your &quot;WHERE&quot; into a &quot;WITH/WHERE&quot; pattern"
+              },
+              {
+                "name": "score",
+                "type": "integer",
+                "sample": "1"
+              },
+              {
+                "name": "uuid",
+                "type": "integer",
+                "sample": "69272967"
+              }
+            ]
+          },
+          {
+            "$id": "t:11",
+            "name": "stackoverflow.nodes.Question.csv",
+            "expanded": false,
+            "fields": [
+              {
+                "name": "question_id",
+                "type": "integer",
+                "sample": "0"
+              },
+              {
+                "name": "link",
+                "type": "string",
+                "sample": "https://stackoverflow.com/q/65697972"
+              },
+              {
+                "name": "accepted_answer_id",
+                "type": "integer",
+                "sample": "65954158"
+              },
+              {
+                "name": "creation_date",
+                "type": "integer",
+                "sample": "1610525782"
+              },
+              {
+                "name": "view_count",
+                "type": "integer",
+                "sample": "70"
+              },
+              {
+                "name": "answer_count",
+                "type": "integer",
+                "sample": "1"
+              },
+              {
+                "name": "body_markdown",
+                "type": "string",
+                "sample": "I want to create a graph from my recursive JSON file. My JSON data is given below.\r\n\r\n```{\r\n  &quot;ChildNodes&quot;:[\r\n    {\r\n      &quot;ChildNodes&quot;:[\r\n        {\r\n          &quot;ChildNodes&quot;:[\r\n            {\r\n              &quot;ChildNodes&quot;:[\r\n                {\r\n                  &quot;ChildNodes&quot;:[\r\n                    {\r\n                      &quot;FSId&quot;:1,\r\n                      &quot;FileDetailId&quot;:1862,\r\n                      &quot;FileId&quot;:1225,\r\n                      &quot;FileName&quot;:&quot;tables&quot;,\r\n                      &quot;Type&quot;:[\r\n                        &quot;DI&quot;\r\n                      ],\r\n                      &quot;collapsed&quot;:1\r\n                    }\r\n                  ],\r\n                  &quot;FSId&quot;:1,\r\n                  &quot;FileDetailId&quot;:1861,\r\n                  &quot;FileId&quot;:1224,\r\n                  &quot;FileName&quot;:&quot;Components&quot;,\r\n                  &quot;Type&quot;:[\r\n                    &quot;DI&quot;\r\n                  ],\r\n                  &quot;collapsed&quot;:1\r\n                },\r\n                {\r\n                  &quot;FSId&quot;:1,\r\n                  &quot;FileDetailId&quot;:1885,\r\n                  &quot;FileId&quot;:1247,\r\n                  &quot;FileName&quot;:&quot;Filters&quot;,\r\n                  &quot;Type&quot;:[\r\n                    &quot;DI&quot;\r\n                  ],\r\n                  &quot;collapsed&quot;:1\r\n                },\r\n                {\r\n                  &quot;FSId&quot;:1,\r\n                  &quot;FileDetailId&quot;:1894,\r\n                  &quot;FileId&quot;:1253,\r\n                  &quot;FileName&quot;:&quot;SFXPlugins&quot;,\r\n                  &quot;Type&quot;:[\r\n                    &quot;DI&quot;\r\n                  ],\r\n                  &quot;collapsed&quot;:1\r\n                },\r\n                {\r\n                  &quot;FSId&quot;:1,\r\n                  &quot;FileDetailId&quot;:1899,\r\n                  &quot;FileId&quot;:1255,\r\n                  &quot;FileName&quot;:&quot;SonicResources&quot;,\r\n                  &quot;Type&quot;:[\r\n                    &quot;DI&quot;\r\n                  ],\r\n                  &quot;collapsed&quot;:1\r\n                },\r\n                {\r\n                  &quot;FSId&quot;:1,\r\n                  &quot;FileDetailId&quot;:1901,\r\n                  &quot;FileId&quot;:1257,\r\n                  &quot;FileName&quot;:&quot;style&quot;,\r\n                  &quot;Type&quot;:[\r\n                    &quot;DI&quot;\r\n                  ],\r\n                  &quot;collapsed&quot;:1\r\n                },\r\n                {\r\n                  &quot;ChildNodes&quot;:[\r\n                    {\r\n                      &quot;ChildNodes&quot;:[\r\n                        {\r\n                          &quot;ChildNodes&quot;:[\r\n                            {\r\n                              &quot;FSId&quot;:1,\r\n                              &quot;FileDetailId&quot;:1905,\r\n                              &quot;FileId&quot;:1262,\r\n                              &quot;FileName&quot;:&quot;Symphony&quot;,\r\n                              &quot;Type&quot;:[\r\n                                &quot;DI&quot;\r\n                              ],\r\n                              &quot;collapsed&quot;:1\r\n                            }\r\n                          ],\r\n                          &quot;FSId&quot;:1,\r\n                          &quot;FileDetailId&quot;:1904,\r\n                          &quot;FileId&quot;:1260,\r\n                          &quot;FileName&quot;:&quot;Symphony&quot;,\r\n                          &quot;Type&quot;:[\r\n                            &quot;DI&quot;\r\n                          ],\r\n                          &quot;collapsed&quot;:1\r\n                        }\r\n                      ],\r\n                      &quot;FSId&quot;:1,\r\n                      &quot;FileDetailId&quot;:1903,\r\n                      &quot;FileId&quot;:1259,\r\n                      &quot;FileName&quot;:&quot;NTSC&quot;,\r\n                      &quot;Type&quot;:[\r\n                        &quot;DI&quot;\r\n                      ],\r\n                      &quot;collapsed&quot;:1\r\n                    },\r\n                    {\r\n                      &quot;ChildNodes&quot;:[\r\n                        {\r\n                          &quot;ChildNodes&quot;:[\r\n                            {\r\n                              &quot;FSId&quot;:1,\r\n                              &quot;FileDetailId&quot;:1910,\r\n                              &quot;FileId&quot;:1267,\r\n                              &quot;FileName&quot;:&quot;Symphony&quot;,\r\n                              &quot;Type&quot;:[\r\n                                &quot;DI&quot;\r\n                              ],\r\n                              &quot;collapsed&quot;:1\r\n                            }\r\n                          ],\r\n                          &quot;FSId&quot;:1,\r\n                          &quot;FileDetailId&quot;:1909,\r\n                          &quot;FileId&quot;:1265,\r\n                          &quot;FileName&quot;:&quot;Symphony&quot;,\r\n                          &quot;Type&quot;:[\r\n                            &quot;DI&quot;\r\n                          ],\r\n                          &quot;collapsed&quot;:1\r\n                        }\r\n                      ],\r\n                      &quot;FSId&quot;:1,\r\n                      &quot;FileDetailId&quot;:1908,\r\n                      &quot;FileId&quot;:1264,\r\n                      &quot;FileName&quot;:&quot;PAL&quot;,\r\n                      &quot;Type&quot;:[\r\n                        &quot;DI&quot;\r\n                      ],\r\n                      &quot;collapsed&quot;:1\r\n                    }\r\n                  ],\r\n                  &quot;FSId&quot;:1,\r\n                  &quot;FileDetailId&quot;:1902,\r\n                  &quot;FileId&quot;:1258,\r\n                  &quot;FileName&quot;:&quot;Styles&quot;,\r\n                  &quot;Type&quot;:[\r\n                    &quot;DI&quot;\r\n                  ],\r\n                  &quot;collapsed&quot;:1\r\n                }\r\n              ],\r\n              &quot;FSId&quot;:1,\r\n              &quot;FileDetailId&quot;:1860,\r\n              &quot;FileId&quot;:1216,\r\n              &quot;FileName&quot;:&quot;CreateDisc&quot;,\r\n              &quot;Type&quot;:[\r\n                &quot;DI&quot;\r\n              ],\r\n              &quot;collapsed&quot;:1\r\n            },\r\n            {\r\n              &quot;FSId&quot;:1,\r\n              &quot;FileDetailId&quot;:1913,\r\n              &quot;FileId&quot;:1269,\r\n              &quot;FileName&quot;:&quot;de-DE&quot;,\r\n              &quot;Type&quot;:[\r\n                &quot;DI&quot;\r\n              ],\r\n              &quot;collapsed&quot;:1\r\n            },\r\n            {\r\n              &quot;FSId&quot;:1,\r\n              &quot;FileDetailId&quot;:1994,\r\n              &quot;FileId&quot;:1298,\r\n              &quot;FileName&quot;:&quot;en-US&quot;,\r\n              &quot;Type&quot;:[\r\n                &quot;DI&quot;\r\n              ],\r\n              &quot;collapsed&quot;:1\r\n            },\r\n            {\r\n              &quot;ChildNodes&quot;:[\r\n                {\r\n                  &quot;FSId&quot;:1,\r\n                  &quot;FileDetailId&quot;:2050,\r\n                  &quot;FileId&quot;:1328,\r\n                  &quot;FileName&quot;:&quot;X02&quot;,\r\n                  &quot;Type&quot;:[\r\n                    &quot;DI&quot;\r\n                  ],\r\n                  &quot;collapsed&quot;:1\r\n                }\r\n              ],\r\n              &quot;FSId&quot;:1,\r\n              &quot;FileDetailId&quot;:2049,\r\n              &quot;FileId&quot;:1327,\r\n              &quot;FileName&quot;:&quot;MCX&quot;,\r\n              &quot;Type&quot;:[\r\n                &quot;DI&quot;\r\n              ],\r\n              &quot;collapsed&quot;:1\r\n            },\r\n            {\r\n              &quot;FSId&quot;:1,\r\n              &quot;FileDetailId&quot;:2066,\r\n              &quot;FileId&quot;:1330,\r\n              &quot;FileName&quot;:&quot;MediaRenderer&quot;,\r\n              &quot;Type&quot;:[\r\n                &quot;DI&quot;\r\n              ],\r\n              &quot;collapsed&quot;:1\r\n            },\r\n            {\r\n              &quot;FSId&quot;:1,\r\n              &quot;FileDetailId&quot;:2091,\r\n              &quot;FileId&quot;:1335,\r\n              &quot;FileName&quot;:&quot;sk-SK&quot;,\r\n              &quot;Type&quot;:[\r\n                &quot;DI&quot;\r\n              ],\r\n              &quot;collapsed&quot;:1\r\n            },\r\n            {\r\n              &quot;ChildNodes&quot;:[\r\n                {\r\n                  &quot;FSId&quot;:1,\r\n                  &quot;FileDetailId&quot;:2108,\r\n                  &quot;FileId&quot;:1359,\r\n                  &quot;FileName&quot;:&quot;de-DE&quot;,\r\n                  &quot;Type&quot;:[\r\n                    &quot;DI&quot;\r\n                  ],\r\n                  &quot;collapsed&quot;:1\r\n                },\r\n                {\r\n                  &quot;FSId&quot;:1,\r\n                  &quot;FileDetailId&quot;:2116,\r\n                  &quot;FileId&quot;:1361,\r\n                  &quot;FileName&quot;:&quot;en-US&quot;,\r\n                  &quot;Type&quot;:[\r\n                    &quot;DI&quot;\r\n                  ],\r\n                  &quot;collapsed&quot;:1\r\n                }\r\n              ],\r\n              &quot;FSId&quot;:1,\r\n              &quot;FileDetailId&quot;:2106,\r\n              &quot;FileId&quot;:1350,\r\n              &quot;FileName&quot;:&quot;wow&quot;,\r\n              &quot;Type&quot;:[\r\n                &quot;DI&quot;\r\n              ],\r\n              &quot;collapsed&quot;:1\r\n            }\r\n          ],\r\n          &quot;FSId&quot;:1,\r\n          &quot;FileDetailId&quot;:1856,\r\n          &quot;FileId&quot;:1103,\r\n          &quot;FileName&quot;:&quot;ehome&quot;,\r\n          &quot;Type&quot;:[\r\n            &quot;DI&quot;\r\n          ],\r\n          &quot;collapsed&quot;:1\r\n        },\r\n        {\r\n          &quot;FSId&quot;:1,\r\n          &quot;FileDetailId&quot;:2120,\r\n          &quot;FileId&quot;:1363,\r\n          &quot;FileName&quot;:&quot;en&quot;,\r\n          &quot;Type&quot;:[\r\n            &quot;DI&quot;\r\n          ],\r\n          &quot;collapsed&quot;:1\r\n        },\r\n        {\r\n          &quot;FSId&quot;:1,\r\n          &quot;FileDetailId&quot;:2122,\r\n          &quot;FileId&quot;:1365,\r\n          &quot;FileName&quot;:&quot;en-US&quot;,\r\n          &quot;Type&quot;:[\r\n            &quot;DI&quot;\r\n          ],\r\n          &quot;collapsed&quot;:1\r\n        },\r\n        {\r\n          &quot;FSId&quot;:1,\r\n          &quot;FileDetailId&quot;:2135,\r\n          &quot;FileId&quot;:1376,\r\n          &quot;FileName&quot;:&quot;Fonts&quot;,\r\n          &quot;Type&quot;:[\r\n            &quot;DI&quot;\r\n          ],\r\n          &quot;collapsed&quot;:1\r\n        },\r\n        {\r\n          &quot;ChildNodes&quot;:[\r\n            {\r\n              &quot;FSId&quot;:1,\r\n              &quot;FileDetailId&quot;:3117,\r\n              &quot;FileId&quot;:2927,\r\n              &quot;FileName&quot;:&quot;config&quot;,\r\n              &quot;Type&quot;:[\r\n                &quot;DI&quot;\r\n              ],\r\n              &quot;collapsed&quot;:1\r\n            }\r\n          ],\r\n          &quot;FSId&quot;:1,\r\n          &quot;FileDetailId&quot;:2956,\r\n          &quot;FileId&quot;:2118,\r\n          &quot;FileName&quot;:&quot;System32&quot;,\r\n          &quot;Type&quot;:[\r\n            &quot;DI&quot;\r\n          ],\r\n          &quot;collapsed&quot;:1\r\n        }\r\n      ],\r\n      &quot;FSId&quot;:1,\r\n      &quot;FileDetailId&quot;:1844,\r\n      &quot;FileId&quot;:1051,\r\n      &quot;FileName&quot;:&quot;Windows&quot;,\r\n      &quot;Type&quot;:[\r\n        &quot;DI&quot;\r\n      ],\r\n      &quot;collapsed&quot;:1\r\n    },\r\n    {\r\n      &quot;FSId&quot;:1,\r\n      &quot;FileDetailId&quot;:3813,\r\n      &quot;FileId&quot;:3072,\r\n      &quot;FileName&quot;:&quot;$OrphanFiles&quot;,\r\n      &quot;Type&quot;:[\r\n        &quot;DI&quot;,\r\n        &quot;IN&quot;\r\n      ],\r\n      &quot;collapsed&quot;:1\r\n    }\r\n  ],\r\n  &quot;FSId&quot;:1,\r\n  &quot;FileDetailId&quot;:0,\r\n  &quot;FileId&quot;:5,\r\n  &quot;FileName&quot;:&quot;C:&quot;,\r\n  &quot;Type&quot;:[\r\n    &quot;DI&quot;\r\n  ],\r\n  &quot;collapsed&quot;:1\r\n}\r\n\r\n```\r\n\r\nI found solution in this link useful to me for building my graph - https://community.neo4j.com/t/import-nodes-from-recursively-structured-json/11704\r\nI was able to build the graph with the help of above mentioned link. I used the query given below.\r\n\r\n```\r\nWITH &#39;file:///part-of-VTree.json&#39; AS json_file\r\nCALL apoc.load.json(json_file,&quot;..FileId&quot;) YIELD value AS result \r\nWITH json_file, result.result AS keys \r\nUNWIND range(0,size(keys)-1) AS i \r\nCALL apoc.load.json(json_file,&quot;..[?(@.FileId == &#39;&quot; + toString(keys[i]) + &quot;&#39;)].ChildNodes[*].FileId&quot;) YIELD value AS children\r\nWITH keys[i] AS parent_key, children.result AS children\r\nMERGE (parent:GroupNode {name: parent_key})\r\nWITH parent, children\r\nUNWIND children as child_key\r\nMERGE (child:GroupNode {name: child_key})\r\nMERGE (child)-[:CHILD_OF]-&gt;(parent)\r\nRETURN *\r\n```\r\n\r\nThis created a graph with nodes having &quot;FileId&quot; mentioned on it , as I was giving &quot;FileId&quot; as &quot;name&quot; property. When I change my query as below\r\n\r\n```\r\nWITH &#39;file:///part-of-VTree.json&#39; AS json_file\r\nCALL apoc.load.json(json_file,&quot;..FileId&quot;) YIELD value AS result \r\nWITH json_file, result.result AS keys \r\nUNWIND range(0,size(keys)-1) AS i \r\nCALL apoc.load.json(json_file,&quot;..[?(@.FileId == &#39;&quot; + toString(keys[i]) + &quot;&#39;)].ChildNodes[*].FileId&quot;) YIELD value AS children\r\nWITH keys[i] AS parent_key, children.result AS children\r\nMERGE (parent:GroupNode {Fid: parent_key})\r\nWITH parent, children\r\nUNWIND children as child_key\r\nMERGE (child:GroupNode {Fid: child_key})\r\nMERGE (child)-[:CHILD_OF]-&gt;(parent)\r\nRETURN *\r\n```\r\n\r\nIt gives me a graph with nodes which has nothing mentioned on it. Earlier I was getting nodes with &quot;FileId&quot; mentioned on it.\r\nwhat I want is nodes with &quot;FileName&quot; mentioned on it and &quot;FileId&quot; as its property.\r\n\r\nWith my current query I am not able to set properties for my node. Is there any way to set properties for my node and display &quot;FileName&quot; on nodes. &quot;FileName&quot; is not always unique so I can&#39;t create graph by extracting all &quot;FileName&quot; instead of &quot;FileId&quot;.\r\n&quot;FileId&quot; is always unique in my case.\r\n\r\nCan anyone help me in some way to get my desired result. I need some help.\r\nThanks in advance!"
+              },
+              {
+                "name": "uuid",
+                "type": "integer",
+                "sample": "65697972"
+              },
+              {
+                "name": "title",
+                "type": "string",
+                "sample": "Create graph from recursive JSON data using apoc.load.json and use UNWIND and FOREACH for setting property"
+              }
+            ]
+          }
+        ]
+      },
+      "nodeMappings": [
+        {
+          "node": {
+            "$ref": "#n:n0"
+          },
+          "tableSchema": {
+            "$ref": "#t:11"
+          },
+          "propertyMappings": [
+            {
+              "property": {
+                "$ref": "#p:1"
+              },
+              "fieldName": "question_id"
+            },
+            {
+              "property": {
+                "$ref": "#p:2"
+              },
+              "fieldName": "link"
+            },
+            {
+              "property": {
+                "$ref": "#p:3"
+              },
+              "fieldName": "accepted_answer_id"
+            },
+            {
+              "property": {
+                "$ref": "#p:4"
+              },
+              "fieldName": "creation_date"
+            },
+            {
+              "property": {
+                "$ref": "#p:5"
+              },
+              "fieldName": "view_count"
+            },
+            {
+              "property": {
+                "$ref": "#p:6"
+              },
+              "fieldName": "answer_count"
+            },
+            {
+              "property": {
+                "$ref": "#p:7"
+              },
+              "fieldName": "body_markdown"
+            },
+            {
+              "property": {
+                "$ref": "#p:8"
+              },
+              "fieldName": "uuid"
+            },
+            {
+              "property": {
+                "$ref": "#p:9"
+              },
+              "fieldName": "title"
+            }
+          ]
+        },
+        {
+          "node": {
+            "$ref": "#n:n1"
+          },
+          "tableSchema": {
+            "$ref": "#t:10"
+          },
+          "propertyMappings": [
+            {
+              "property": {
+                "$ref": "#p:10"
+              },
+              "fieldName": "answer_id"
+            },
+            {
+              "property": {
+                "$ref": "#p:11"
+              },
+              "fieldName": "link"
+            },
+            {
+              "property": {
+                "$ref": "#p:12"
+              },
+              "fieldName": "title"
+            },
+            {
+              "property": {
+                "$ref": "#p:13"
+              },
+              "fieldName": "is_accepted"
+            },
+            {
+              "property": {
+                "$ref": "#p:14"
+              },
+              "fieldName": "body_markdown"
+            },
+            {
+              "property": {
+                "$ref": "#p:15"
+              },
+              "fieldName": "score"
+            },
+            {
+              "property": {
+                "$ref": "#p:16"
+              },
+              "fieldName": "uuid"
+            }
+          ]
+        },
+        {
+          "node": {
+            "$ref": "#n:n2"
+          },
+          "tableSchema": {
+            "$ref": "#t:9"
+          },
+          "propertyMappings": [
+            {
+              "property": {
+                "$ref": "#p:17"
+              },
+              "fieldName": "comment_id"
+            },
+            {
+              "property": {
+                "$ref": "#p:18"
+              },
+              "fieldName": "score"
+            },
+            {
+              "property": {
+                "$ref": "#p:19"
+              },
+              "fieldName": "uuid"
+            },
+            {
+              "property": {
+                "$ref": "#p:20"
+              },
+              "fieldName": "link"
+            }
+          ]
+        },
+        {
+          "node": {
+            "$ref": "#n:n3"
+          },
+          "tableSchema": {
+            "$ref": "#t:8"
+          },
+          "propertyMappings": [
+            {
+              "property": {
+                "$ref": "#p:21"
+              },
+              "fieldName": "user_id"
+            },
+            {
+              "property": {
+                "$ref": "#p:22"
+              },
+              "fieldName": "uuid"
+            },
+            {
+              "property": {
+                "$ref": "#p:23"
+              },
+              "fieldName": "display_name"
+            }
+          ]
+        },
+        {
+          "node": {
+            "$ref": "#n:n4"
+          },
+          "tableSchema": {
+            "$ref": "#t:7"
+          },
+          "propertyMappings": [
+            {
+              "property": {
+                "$ref": "#p:24"
+              },
+              "fieldName": "tag_id"
+            },
+            {
+              "property": {
+                "$ref": "#p:25"
+              },
+              "fieldName": "name"
+            },
+            {
+              "property": {
+                "$ref": "#p:26"
+              },
+              "fieldName": "link"
+            }
+          ]
+        }
+      ],
+      "relationshipMappings": [
+        {
+          "relationship": {
+            "$ref": "#r:n0"
+          },
+          "tableSchema": {
+            "$ref": "#t:6"
+          },
+          "fromMapping": {
+            "fieldName": "answer_id"
+          },
+          "toMapping": {
+            "fieldName": "question_id"
+          },
+          "propertyMappings": []
+        },
+        {
+          "relationship": {
+            "$ref": "#r:n1"
+          },
+          "tableSchema": {
+            "$ref": "#t:1"
+          },
+          "fromMapping": {
+            "fieldName": "question_id"
+          },
+          "toMapping": {
+            "fieldName": "tag_id"
+          },
+          "propertyMappings": []
+        },
+        {
+          "relationship": {
+            "$ref": "#r:n2"
+          },
+          "tableSchema": {
+            "$ref": "#t:5"
+          },
+          "fromMapping": {
+            "fieldName": "user_id"
+          },
+          "toMapping": {
+            "fieldName": "question_id"
+          },
+          "propertyMappings": []
+        },
+        {
+          "relationship": {
+            "$ref": "#r:n3"
+          },
+          "tableSchema": {
+            "$ref": "#t:4"
+          },
+          "fromMapping": {
+            "fieldName": "user_id"
+          },
+          "toMapping": {
+            "fieldName": "comment_id"
+          },
+          "propertyMappings": []
+        },
+        {
+          "relationship": {
+            "$ref": "#r:n4"
+          },
+          "tableSchema": {
+            "$ref": "#t:3"
+          },
+          "fromMapping": {
+            "fieldName": "comment_id"
+          },
+          "toMapping": {
+            "fieldName": "question_id"
+          },
+          "propertyMappings": []
+        },
+        {
+          "relationship": {
+            "$ref": "#r:n5"
+          },
+          "tableSchema": {
+            "$ref": "#t:2"
+          },
+          "fromMapping": {
+            "fieldName": "user_id"
+          },
+          "toMapping": {
+            "fieldName": "answer_id"
+          },
+          "propertyMappings": []
+        }
+      ]
+    },
+    "configurations": {
+      "idsToIgnore": []
+    }
+  }
+}
